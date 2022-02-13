@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users, :only => [:show]
   root to: 'home#index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :stores, controllers: {
