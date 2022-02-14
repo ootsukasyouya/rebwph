@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_13_112500) do
+ActiveRecord::Schema.define(version: 2022_02_14_182605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,23 @@ ActiveRecord::Schema.define(version: 2022_02_13_112500) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name", null: false
+    t.string "address", null: false
+    t.string "profile", null: false
+    t.string "phone_number", null: false
+    t.integer "how_to_work", default: 0, null: false
+    t.integer "hoe_to_earn", default: 0, null: false
+    t.integer "treatment", default: 0, null: false
+    t.integer "go_to_work", default: 0, null: false
+    t.integer "skill", default: 0, null: false
+    t.integer "salary", default: 0, null: false
+    t.integer "time_zone", default: 0, null: false
+    t.integer "atmosphere", default: 0, null: false
+    t.integer "age_group", default: 0, null: false
+    t.integer "prefecture_name", default: 0, null: false
+    t.string "station_name", null: false
+    t.string "station_on_foot", null: false
+    t.string "image"
     t.index ["email"], name: "index_stores_on_email", unique: true
     t.index ["reset_password_token"], name: "index_stores_on_reset_password_token", unique: true
   end
@@ -35,6 +52,7 @@ ActiveRecord::Schema.define(version: 2022_02_13_112500) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
