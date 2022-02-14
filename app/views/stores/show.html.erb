@@ -1,2 +1,5 @@
+<% if store_signed_in? %>
+<%= link_to "ログアウト", destroy_store_session_path, method: :delete %>
+<% end %>
 <% provide(:title, @store) %>
 <h1>My page (<%= @store %>)</h1>
