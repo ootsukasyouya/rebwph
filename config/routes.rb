@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'stores/show'
+  get 'users/show'
+  get 'users/index'
   root to: 'home#index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :stores, controllers: {
@@ -6,10 +9,13 @@ Rails.application.routes.draw do
     passwords:     'stores/passwords',
     registrations: 'stores/registrations'
   }
+  resources :stores, :only => [:index, :show]
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
+  resources :users, :only => [:index, :show]
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
