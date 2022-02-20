@@ -1,2 +1,9 @@
-<% provide(:title, @user) %>
-<h1>My page (<%= @user %>)</h1>
+<% if user_signed_in? %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<% end %>
+
+ <%= link_to "編集", edit_user_registration_path %>
+<p>
+  <strong>店舗名:</strong>
+  <%= @user.name %>
+</p>
