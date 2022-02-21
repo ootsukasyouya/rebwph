@@ -1,5 +1,10 @@
 class StoresController < ApplicationController
-    def show
+
+   def index
+    @stores = Store.all
+   end
+
+   def show
       @store = Store.find(params[:id])
-    end
+   end
 end
