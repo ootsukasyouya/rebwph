@@ -1,6 +1,8 @@
 <% if store_signed_in? %>
-      <%= link_to "ログアウト", destroy_store_session_path, method: :delete %>
-    <% end %>
+    <%= link_to "ログアウト", destroy_store_session_path, method: :delete %>
+<% end %>
+
+ <%= link_to "編集", edit_store_registration_path %>
 
 <p>
   <strong>店舗名:</strong>
