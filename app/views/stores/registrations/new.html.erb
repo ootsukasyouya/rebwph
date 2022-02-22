@@ -88,6 +88,11 @@
     <%= f.select :station_on_foot, Store.station_on_foots.keys.map {|k| [I18n.t("enums.store.station_on_foot.#{k}"), k]} %>
   </div>
 
+  <div class="field">
+  <%= f.label :video %>
+  <%= f.file_field :image, :accept => 'video/*' %>
+</div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

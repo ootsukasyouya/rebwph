@@ -1,5 +1,7 @@
 class Store < ApplicationRecord
 
+  mount_uploader :video_top, VideoUploader
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
